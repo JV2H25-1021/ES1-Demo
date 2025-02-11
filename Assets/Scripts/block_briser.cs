@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Demarrer : MonoBehaviour
+public class block_briser : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,11 @@ public class Demarrer : MonoBehaviour
         
     }
 
-    public void detruirePlatforme()
+    void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject); //Détruit l'objet ciblée par la fonction
+        if(other.CompareTag("Bille")) //Compare les tags
+        {
+            Destroy(gameObject); //Détruit l'objet
+        }
     }
 }
